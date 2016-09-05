@@ -1,0 +1,46 @@
+[{
+    "schemeDetails": {
+        "scheme": {
+            "caseKey": 23332,
+            "schemeNo": "6600001480"
+        },
+        "entityNumber": "1028596771",
+        "schemeName": "GR(Default 6600001480",
+        "startDate": "2008-07-01",
+        "reviewDate": "2015-07-01",
+        "lifePlan": "Group Risk",
+        "industry": "Service - Information, Media And Technology",
+        "natureOfBusiness": "IT COMPANY",
+        "nsbcIndicator": "No",
+        "adiPeriod": "90",
+        "statusCode": "Active",
+        "statusDate": "2008-07-01",
+        "billing_Sent": "2015-08-01",
+        "lastUploadDate": "2015-07-01",
+        "employerName": "COBMCKGLHJJB",
+        "costingType": "Percentage of Payroll"
+    }
+},
+{
+	"schemeDetails": {
+		"scheme": {
+			"caseKey": 50909,
+			"schemeNo": "6600003576"
+		},
+		"entityNumber": "1028529665",
+		"schemeName": "GR(Default 6600003576",
+		"startDate": "2010-12-01",
+		"reviewDate": "2015-08-01",
+		"lifePlan": "Group Risk",
+		"industry": "Goods - Light Manufacturing",
+		"natureOfBusiness": "Logistics",
+		"nsbcIndicator": "No",
+		"adiPeriod": "90",
+		"statusCode": "Active",
+		"statusDate": "2010-12-01",
+		"billing_Sent": "2015-07-01",
+		"lastUploadDate": "2015-06-01",
+		"employerName": "CHBMCKGCLHHG",
+		"costingType": "Percentage of Payroll"
+	}
+}]

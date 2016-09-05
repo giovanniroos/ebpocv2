@@ -1,0 +1,50 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle + ': ' + scheme.schemeDetails.schemeName}}
+    </div>
+    <div class="panel-body">
+        <div class='row'>
+            <div class='col-md-2'>Filter by:</div>
+            <div class='col-md-4'>
+                <input type='text' placeholder="Member name" [(ngModel)]='listFilter' />
+            </div>
+        </div>
+        <div class='row' *ngIf='listFilter'>
+            <div class='col-md-6'>
+                <h3>Filtered by: {{listFilter}} </h3>
+            </div>
+        </div>
+
+        <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
+
+        <div class='table-responsive'>
+            <table class='table' *ngIf='members && members.length'>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>ID number</th>
+                        <th>Member status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='#member of members  | memberFilter:listFilter'>
+                        <td> <a>
+                                {{member.memberDetails.person.firstName}} {{member.memberDetails.person.lastName}}
+                            </a>
+                        </td>
+                        <td>
+                          {{member.memberDetails.person.identityNo}}
+                        </td>
+                        <td>{{member.memberDetails.memberStatus.status}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class='panel-footer'>
+      <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+        <i class='glyphicon glyphicon-chevron-left'></i> Back
+      </a>
+    </div>
+</div>

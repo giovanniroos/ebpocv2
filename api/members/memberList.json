@@ -1,0 +1,363 @@
+[{
+		"memberDetails": {
+				"schemeMember": {
+						"scheme": {
+								"caseKey": "50909",
+								"schemeNo": "6600003576"
+						},
+						"member": {
+								"caseMbrKey": "1341457",
+								"memberNo": "6700743290"
+						}
+				},
+				"person": {
+						"entityNo": "1101658399",
+						"title": "Mr.",
+						"initials": "R",
+						"firstName": "ROBBMBHGKDLL",
+						"lastName": "JABBMBHGKDLL",
+						"dateOfBirth": "1981-04-15",
+						"gender": "Male",
+						"identityNo": "8104151475055",
+						"passportNo": "",
+						"countryOfIssue": ""
+				},
+				"joinedDate": "2011-05-01",
+				"memberGroup": "Unapproved GLA",
+				"branchName": "CHC Resources Container Depot (NBW)",
+				"priorMemberNo": "",
+				"payrollNo": "ZZ009",
+				"earnings": "153627.36",
+				"smartService": "Y",
+				"billingSent": "2015-07-01",
+				"retirementDate": "2046-05-01",
+				"underwritingRequired": "false",
+				"memberStatus": {
+						"statusCode": "01",
+						"status": "Active Member",
+						"statusDate": "2011-05-01"
+				}
+		}
+},
+{
+	"memberDetails": {
+		"schemeMember": {
+			"scheme": {
+				"caseKey": "50909",
+				"schemeNo": "6600003576"
+			},
+			"member": {
+				"caseMbrKey": "1934970",
+				"memberNo": "6701107271"
+			}
+		},
+		"person": {
+			"entityNo": "1114418195",
+			"title": "Ms.",
+			"initials": "C",
+			"firstName": "CHBBBFFBKBLG",
+			"lastName": "GOBBBFFBKBLG",
+			"dateOfBirth": "1985-09-07",
+			"gender": "Female",
+			"identityNo": "8509071883159",
+			"passportNo": "",
+			"countryOfIssue": ""
+		},
+		"joinedDate": "2014-07-01",
+		"memberGroup": "Unapproved GLA",
+		"branchName": "CHC Resources Container Depot (NBW)",
+		"priorMemberNo": "",
+		"payrollNo": "G053",
+		"earnings": "94500",
+		"smartService": "Y",
+		"billingSent": "2015-07-01",
+		"retirementDate": "2050-10-01",
+		"underwritingRequired": "false",
+		"memberStatus": {
+			"statusCode": "01",
+			"status": "Active Member",
+			"statusDate": "2014-07-01"
+		}
+	}
+},{
+	"memberDetails": {
+		"schemeMember": {
+			"scheme": {
+				"caseKey": "50909",
+				"schemeNo": "6600003576"
+			},
+			"member": {
+				"caseMbrKey": "1934969",
+				"memberNo": "6701107272"
+			}
+		},
+		"person": {
+			"entityNo": "1102249628",
+			"title": "Mr.",
+			"initials": "W",
+			"firstName": "WABBMCCFLHCK",
+			"lastName": "SMBBMCCFLHCK",
+			"dateOfBirth": "1988-05-17",
+			"gender": "Male",
+			"identityNo": "8805171883160",
+			"passportNo": "",
+			"countryOfIssue": ""
+		},
+		"joinedDate": "2014-07-01",
+		"memberGroup": "Unapproved GLA",
+		"branchName": "CHC Resources Container Depot (NBW)",
+		"priorMemberNo": "",
+		"payrollNo": "S217",
+		"earnings": "239400",
+		"smartService": "Y",
+		"billingSent": "2015-07-01",
+		"retirementDate": "2053-06-01",
+		"underwritingRequired": "false",
+		"memberStatus": {
+			"statusCode": "01",
+			"status": "Active Member",
+			"statusDate": "2014-07-01"
+		}
+	}
+},{
+	"memberDetails": {
+		"schemeMember": {
+			"scheme": {
+				"caseKey": "50909",
+				"schemeNo": "6600003576"
+			},
+			"member": {
+				"caseMbrKey": "1819644",
+				"memberNo": "6701038181"
+			}
+		},
+		"person": {
+			"entityNo": "",
+			"title": "Mr.",
+			"initials": "S",
+			"firstName": "SIERRBMMMMMMMMMBFHKJCB",
+			"lastName": "NYERRBMMMMMMMMMBFHKJCB",
+			"dateOfBirth": "1975-12-20",
+			"gender": "Male",
+			"identityNo": "7512201818376",
+			"passportNo": "",
+			"countryOfIssue": ""
+		},
+		"joinedDate": "2014-01-01",
+		"memberGroup": "Unapproved GLA",
+		"branchName": "CHC Resources Container Depot (NBW)",
+		"priorMemberNo": "",
+		"payrollNo": "ZZ060",
+		"earnings": "66612",
+		"smartService": "Y",
+		"billingSent": "2015-07-01",
+		"retirementDate": "2041-01-01",
+		"underwritingRequired": "false",
+		"memberStatus": {
+			"statusCode": "01",
+			"status": "Active Member",
+			"statusDate": "2014-01-01"
+		}
+	}
+},{
+	"memberDetails": {
+		"schemeMember": {
+			"scheme": {
+				"caseKey": "50909",
+				"schemeNo": "6600003576"
+			},
+			"member": {
+				"caseMbrKey": "1819643",
+				"memberNo": "6701038182"
+			}
+		},
+		"person": {
+			"entityNo": "1117136562",
+			"title": "Mrs.",
+			"initials": "K",
+			"firstName": "KABBBJBDHGHC",
+			"lastName": "AUBBBJBDHGHC",
+			"dateOfBirth": "1989-04-14",
+			"gender": "Female",
+			"identityNo": "8904141818377",
+			"passportNo": "",
+			"countryOfIssue": ""
+		},
+		"joinedDate": "2014-01-01",
+		"memberGroup": "Unapproved GLA",
+		"branchName": "CHC Resources Container Depot (NBW)",
+		"priorMemberNo": "",
+		"payrollNo": "P197",
+		"earnings": "63000",
+		"smartService": "Y",
+		"billingSent": "2015-07-01",
+		"retirementDate": "2054-05-01",
+		"underwritingRequired": "false",
+		"memberStatus": {
+			"statusCode": "01",
+			"status": "Active Member",
+			"statusDate": "2014-01-01"
+		}
+	}
+},{
+	"memberDetails": {
+		"schemeMember": {
+			"scheme": {
+				"caseKey": "50909",
+				"schemeNo": "6600003576"
+			},
+			"member": {
+				"caseMbrKey": "1819642",
+				"memberNo": "6701038180"
+			}
+		},
+		"person": {
+			"entityNo": "1117136554",
+			"title": "Mr.",
+			"initials": "M",
+			"firstName": "MKBBBJBDHGGF",
+			"lastName": "NGBBBJBDHGGF",
+			"dateOfBirth": "1978-05-27",
+			"gender": "Male",
+			"identityNo": "7805271818375",
+			"passportNo": "",
+			"countryOfIssue": ""
+		},
+		"joinedDate": "2014-01-01",
+		"memberGroup": "Unapproved GLA",
+		"branchName": "CHC Resources Container Depot (NBW)",
+		"priorMemberNo": "",
+		"payrollNo": "ZZ057",
+		"earnings": "60102",
+		"smartService": "Y",
+		"billingSent": "2015-07-01",
+		"retirementDate": "2043-06-01",
+		"underwritingRequired": "false",
+		"memberStatus": {
+			"statusCode": "01",
+			"status": "Active Member",
+			"statusDate": "2014-01-01"
+		}
+	}
+},{
+	"memberDetails": {
+		"schemeMember": {
+			"scheme": {
+				"caseKey": "50909",
+				"schemeNo": "6600003576"
+			},
+			"member": {
+				"caseMbrKey": "1814554",
+				"memberNo": "6701034939"
+			}
+		},
+		"person": {
+			"entityNo": "",
+			"title": "Mr.",
+			"initials": "E",
+			"firstName": "EUERRBMMMMMMMMMBFHFGGG",
+			"lastName": "FOERRBMMMMMMMMMBFHFGGG",
+			"dateOfBirth": "1981-04-03",
+			"gender": "Male",
+			"identityNo": "8104031815384",
+			"passportNo": "",
+			"countryOfIssue": ""
+		},
+		"joinedDate": "2013-12-01",
+		"memberGroup": "Unapproved GLA",
+		"branchName": "CHC Resources Container Depot (NBW)",
+		"priorMemberNo": "",
+		"payrollNo": "F103",
+		"earnings": "151200",
+		"smartService": "Y",
+		"billingSent": "2015-07-01",
+		"retirementDate": "2046-05-01",
+		"underwritingRequired": "false",
+		"memberStatus": {
+			"statusCode": "01",
+			"status": "Active Member",
+			"statusDate": "2013-12-01"
+		}
+	}
+},{
+	"memberDetails": {
+		"schemeMember": {
+			"scheme": {
+				"caseKey": "50909",
+				"schemeNo": "6600003576"
+			},
+			"member": {
+				"caseMbrKey": "1801818",
+				"memberNo": "6701023857"
+			}
+		},
+		"person": {
+			"entityNo": "1084617321",
+			"title": "Miss",
+			"initials": "R",
+			"firstName": "ROBMKFHBJDCB",
+			"lastName": "TABMKFHBJDCB",
+			"dateOfBirth": "1990-08-27",
+			"gender": "Female",
+			"identityNo": "9008271806070",
+			"passportNo": "",
+			"countryOfIssue": ""
+		},
+		"joinedDate": "2013-11-01",
+		"memberGroup": "Unapproved GLA",
+		"branchName": "CHC Resources Container Depot (NBW)",
+		"priorMemberNo": "",
+		"payrollNo": "T164",
+		"earnings": "131040",
+		"smartService": "Y",
+		"billingSent": "2015-07-01",
+		"retirementDate": "2055-09-01",
+		"underwritingRequired": "false",
+		"memberStatus": {
+			"statusCode": "01",
+			"status": "Active Member",
+			"statusDate": "2013-11-01"
+		}
+	}
+},{
+	"memberDetails": {
+		"schemeMember": {
+			"scheme": {
+				"caseKey": "50909",
+				"schemeNo": "6600003576"
+			},
+			"member": {
+				"caseMbrKey": "1801817",
+				"memberNo": "6701023855"
+			}
+		},
+		"person": {
+			"entityNo": "",
+			"title": "Mr.",
+			"initials": "M",
+			"firstName": "MZERRBMMMMMMMMMBFGMJHB",
+			"lastName": "NOERRBMMMMMMMMMBFGMJHB",
+			"dateOfBirth": "1977-01-23",
+			"gender": "Male",
+			"identityNo": "7701231806068",
+			"passportNo": "",
+			"countryOfIssue": ""
+		},
+		"joinedDate": "2013-11-01",
+		"memberGroup": "Unapproved GLA",
+		"branchName": "CHC Resources Container Depot (NBW)",
+		"priorMemberNo": "",
+		"payrollNo": "ZZ062",
+		"earnings": "70894.08",
+		"smartService": "Y",
+		"billingSent": "2015-07-01",
+		"retirementDate": "2042-02-01",
+		"underwritingRequired": "false",
+		"memberStatus": {
+			"statusCode": "01",
+			"status": "Active Member",
+			"statusDate": "2013-11-01"
+		}
+	}
+}
+]
