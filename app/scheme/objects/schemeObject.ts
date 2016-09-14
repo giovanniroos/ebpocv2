@@ -1,5 +1,5 @@
 
-export interface IScheme{
+export interface ISchemeObject{
   caseKey: number;
   schemeNo: string;
 }

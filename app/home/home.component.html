@@ -29,13 +29,14 @@
                 </thead>
                 <tbody>
                     <tr *ngFor='#scheme of schemes | schemeFilter:listFilter'>
-                        <td> <a [routerLink]="['Members',{id: scheme.schemeDetails.caseKey}]">
-                          {{scheme.schemeDetails.schemeName}}
+                        <td> 
+                         <a [routerLink]="['Members',{id: scheme.caseKey}]">
+                          {{scheme.schemeName}}
                           </a>
                         </td>
-                        <td>{{scheme.schemeDetails.scheme.schemeNo}}</td>
-                        <td>{{scheme.schemeDetails.startDate}}</td>
-                        <td>{{scheme.schemeDetails.industry}}</td>
+                        <td>{{scheme.scheme.schemeNo}}</td>
+                        <td>{{scheme.startDate}}</td>
+                        <td>{{scheme.industry}}</td>
                     </tr>
                 </tbody>
             </table>

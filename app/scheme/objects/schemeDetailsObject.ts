@@ -1,7 +1,7 @@
-import {IScheme} from './scheme';
+import {ISchemeObject} from './schemeObject';
 
-export interface ISchemeDetails {
-    scheme: IScheme;
+export interface ISchemeDetailsObject{
+    scheme: ISchemeObject;
     entityNumber: string;
     schemeName: string;
     startDate: string;

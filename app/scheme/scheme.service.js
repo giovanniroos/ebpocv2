@@ -25,23 +25,32 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
             }],
         execute: function() {
             SchemeService = (function () {
+                //private _url = "api/schemes/schemeList.json";
                 function SchemeService(_http) {
                     this._http = _http;
-                    this._url = "api/schemes/schemeList.json";
+                    this._url = "http://localhost:3000/api/document/v1/schemes";
                 }
-                SchemeService.prototype.getSchemes = function () {
+                SchemeService.prototype.getSchemeDetails = function () {
                     return this._http.get(this._url)
-                        .map(function (response) { return response.json(); })
+                        .toPromise()
+                        .then(function (response) { return response.json().data; })
                         .catch(this.handleError);
                 };
+                // getSchemes(): Observable<ISchemeDetailsObject[]> {
+                //     return this._http.get(this._url)
+                //         .map((response: Response) => <ISchemeDetailsObject[]>response.json())
+                //         .do(data => console.log('All: ' + JSON.stringify(data)))
+                //         .catch(this.handleError);
+                // }
                 SchemeService.prototype.handleError = function (error) {
                     console.error('ERROR LOGGER ' + error);
                     return Observable_1.Observable.throw(error.json().error || 'Server error');
                 };
                 SchemeService.prototype.getScheme = function (id) {
-                    console.log(id);
-                    return this.getSchemes()
-                        .map(function (schemess) { return schemess.find(function (s) { return s.schemeDetails.scheme.caseKey === id; }); });
+                    return;
+                    //   console.log(id);
+                    //     return this.getSchemes()
+                    //         .map((schemess: ISchemeDetailsObject[]) => schemess.find(s => s.scheme.caseKey === id));
                 };
                 SchemeService = __decorate([
                     core_1.Injectable(), 

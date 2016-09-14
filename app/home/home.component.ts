@@ -2,7 +2,7 @@ import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 
 import { SchemeService } from '../scheme/scheme.service';
-import { ISchemeObject } from '../scheme/schemeObject';
+import { ISchemeDetailsObject } from '../scheme/objects/schemeDetailsObject';
 import { SchemeFilterPipe } from '../scheme/scheme-filter.pipe';
 
 @Component({
@@ -12,19 +12,36 @@ import { SchemeFilterPipe } from '../scheme/scheme-filter.pipe';
 })
 export class HomeComponent implements OnInit {
     public pageTitle: string = "Schemes for Carl Chemaly";
-    schemes: ISchemeObject[];
+    schemes: ISchemeDetailsObject[];
     errorMessage: string;
     listFilter: string = '';
 
     constructor(private _schemeService: SchemeService) {
     }
 
-    ngOnInit(): void {
-        // console.log('In OnInit');
-        this._schemeService.getSchemes()
-            .subscribe(
-            schemes => this.schemes = schemes,
-            error => this.errorMessage = <any>error
-            );
+    // ngOnInit(): void {
+    //     // console.log('In OnInit');
+    //     this._schemeService.getSchemes()
+    //         .subscribe(
+    //         schemes => this.schemes = schemes,
+    //         error => this.errorMessage = <any>error
+    //         );
+    // }
+
+    //this invokes the service and then calls the method that transforms the data to map to the object
+    ngOnInit() : void{
+            this._schemeService.getSchemeDetails()
+                .then(schemeDetails => {  
+                    this.schemes = this.createSchemeDetailsArr(schemeDetails)
+                });
     }
+
+    //this 'transforms' the data
+    private createSchemeDetailsArr(objArr : any) : ISchemeDetailsObject[]{
+            let schemeDetailsArr : ISchemeDetailsObject[] = [];
+            for(let obj of objArr){
+                schemeDetailsArr.push(obj.schemeDetails);
+            }
+            return schemeDetailsArr;
+        }
 }

@@ -24,7 +24,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 SchemeFilterPipe.prototype.transform = function (value, args) {
                     var filter = args[0] ? args[0].toLocaleLowerCase() : null;
                     return filter ? value.filter(function (product) {
-                        return product.schemeDetails.scheme.schemeNo.toLocaleLowerCase().indexOf(filter) !== -1;
+                        return product.scheme.schemeNo.toLocaleLowerCase().indexOf(filter) !== -1;
                     }) : value;
                 };
                 SchemeFilterPipe = __decorate([
