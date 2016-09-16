@@ -33,18 +33,10 @@ System.register(['angular2/core', 'angular2/router', '../scheme/scheme.service',
                     this.pageTitle = "Schemes for Carl Chemaly";
                     this.listFilter = '';
                 }
-                // ngOnInit(): void {
-                //     // console.log('In OnInit');
-                //     this._schemeService.getSchemes()
-                //         .subscribe(
-                //         schemes => this.schemes = schemes,
-                //         error => this.errorMessage = <any>error
-                //         );
-                // }
                 //this invokes the service and then calls the method that transforms the data to map to the object
                 HomeComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    this._schemeService.getSchemeDetails()
+                    this._schemeService.getSchemes()
                         .then(function (schemeDetails) {
                         _this.schemes = _this.createSchemeDetailsArr(schemeDetails);
                     });

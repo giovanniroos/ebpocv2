@@ -1,6 +1,6 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
-        {{pageTitle + ': ' + scheme.schemeDetails.schemeName}}
+        <!--{{pageTitle + ': ' + frontendScheme.scheme.schemeNo}}-->
     </div>
     <div class="panel-body">
         <div class='row'>
@@ -29,13 +29,13 @@
                 <tbody>
                     <tr *ngFor='#member of members  | memberFilter:listFilter'>
                         <td> <a>
-                                {{member.memberDetails.person.firstName}} {{member.memberDetails.person.lastName}}
+                                {{member.person.firstName}} {{member.person.lastName}}
                             </a>
                         </td>
                         <td>
-                          {{member.memberDetails.person.identityNo}}
+                          {{member.person.identityNo}}
                         </td>
-                        <td>{{member.memberDetails.memberStatus.status}}</td>
+                        <td>{{member.memberStatus.status}}</td>
                     </tr>
                 </tbody>
             </table>

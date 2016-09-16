@@ -27,21 +27,18 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
             MemberService = (function () {
                 function MemberService(_http) {
                     this._http = _http;
-                    this._url = "api/members/memberList.json";
+                    // private _url = "api/members/memberList.json";
+                    this._url = "http://localhost:3000/api/document/v1/schemes/23332/members";
                 }
-                MemberService.prototype.getMembers = function () {
+                MemberService.prototype.getMembers = function (id) {
                     return this._http.get(this._url)
-                        .map(function (response) { return response.json(); })
+                        .toPromise()
+                        .then(function (response) { return response.json().data; })
                         .catch(this.handleError);
                 };
                 MemberService.prototype.handleError = function (error) {
                     console.error('ERROR LOGGER ' + error);
                     return Observable_1.Observable.throw(error.json().error || 'Server error');
-                };
-                MemberService.prototype.getMember = function (id) {
-                    console.log(id);
-                    return this.getMembers()
-                        .map(function (members) { return members.find(function (s) { return s.memberDetails.schemeMember.member.caseMbrKey === id; }); });
                 };
                 MemberService = __decorate([
                     core_1.Injectable(), 

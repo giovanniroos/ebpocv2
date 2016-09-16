@@ -41,42 +41,42 @@ System.register(['angular2/core', 'angular2/router', '../scheme/scheme.service',
                 MemberComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     var id = +this._routeParams.get('id');
-                    this.getScheme(id);
-                    this._memberService.getMembers()
-                        .subscribe(function (members) { return _this.members = members; }, function (error) { return _this.errorMessage = error; });
+                    console.log("Selected scheme case key " + id);
+                    // this.getScheme(id);
+                    // this._schemeService.getScheme(id)
+                    //         .then(schemeDetails => {
+                    //             this.frontendScheme = this.createSchemeDetails(schemeDetails);
+                    //             console.log("CORRECT? 1--> " + this.frontendScheme.scheme.schemeNo);
+                    //         });
+                    // console.log("CORRECT? 2--> ");
+                    this._memberService.getMembers(id)
+                        .then(function (memberDetails) {
+                        _this.members = _this.createMemberDetailsArr(memberDetails);
+                    });
                 };
                 MemberComponent.prototype.onBack = function () {
                     this._router.navigate(['Home']);
                 };
                 MemberComponent.prototype.getScheme = function (id) {
-                    console.log(id);
-                    this.scheme = {
-                        "schemeDetails": {
-                            "scheme": {
-                                "caseKey": 23332,
-                                "schemeNo": "6600001480"
-                            },
-                            "entityNumber": "1028596771",
-                            "schemeName": "GR(Default 6600001480",
-                            "startDate": "2008-07-01",
-                            "reviewDate": "2015-07-01",
-                            "lifePlan": "Group Risk",
-                            "industry": "Service - Information, Media And Technology",
-                            "natureOfBusiness": "IT COMPANY",
-                            "nsbcIndicator": "No",
-                            "adiPeriod": "90",
-                            "statusCode": "Active",
-                            "statusDate": "2008-07-01",
-                            "billing_Sent": "2015-08-01",
-                            "lastUploadDate": "2015-07-01",
-                            "employerName": "COBMCKGLHJJB",
-                            "costingType": "Percentage of Payroll"
-                        }
-                    };
-                    // this._schemeService.getScheme(id)
-                    //       .subscribe(
-                    //       scheme => this.scheme = scheme,
-                    //       error => this.errorMessage = <any>error);
+                    var _this = this;
+                    this._schemeService.getScheme(id)
+                        .then(function (schemeDetails) {
+                        _this.frontendScheme = _this.createSchemeDetails(schemeDetails);
+                        console.log("CORRECT? 1--> " + _this.frontendScheme.scheme.schemeNo);
+                    });
+                };
+                //this 'transforms' the data
+                MemberComponent.prototype.createSchemeDetails = function (objArr) {
+                    return objArr.schemeDetails;
+                };
+                //this 'transforms' the data
+                MemberComponent.prototype.createMemberDetailsArr = function (objArr) {
+                    var arr = [];
+                    for (var _i = 0, objArr_1 = objArr; _i < objArr_1.length; _i++) {
+                        var obj = objArr_1[_i];
+                        arr.push(obj.memberDetails);
+                    }
+                    return arr;
                 };
                 MemberComponent = __decorate([
                     core_1.Component({

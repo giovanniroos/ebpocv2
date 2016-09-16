@@ -19,18 +19,9 @@ export class HomeComponent implements OnInit {
     constructor(private _schemeService: SchemeService) {
     }
 
-    // ngOnInit(): void {
-    //     // console.log('In OnInit');
-    //     this._schemeService.getSchemes()
-    //         .subscribe(
-    //         schemes => this.schemes = schemes,
-    //         error => this.errorMessage = <any>error
-    //         );
-    // }
-
     //this invokes the service and then calls the method that transforms the data to map to the object
     ngOnInit() : void{
-            this._schemeService.getSchemeDetails()
+            this._schemeService.getSchemes()
                 .then(schemeDetails => {  
                     this.schemes = this.createSchemeDetailsArr(schemeDetails)
                 });

@@ -29,28 +29,23 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
                 function SchemeService(_http) {
                     this._http = _http;
                     this._url = "http://localhost:3000/api/document/v1/schemes";
+                    this._singleSchemeUrl = "http://localhost:3000/api/document/v1/schemes/23332";
                 }
-                SchemeService.prototype.getSchemeDetails = function () {
+                SchemeService.prototype.getSchemes = function () {
                     return this._http.get(this._url)
                         .toPromise()
                         .then(function (response) { return response.json().data; })
                         .catch(this.handleError);
                 };
-                // getSchemes(): Observable<ISchemeDetailsObject[]> {
-                //     return this._http.get(this._url)
-                //         .map((response: Response) => <ISchemeDetailsObject[]>response.json())
-                //         .do(data => console.log('All: ' + JSON.stringify(data)))
-                //         .catch(this.handleError);
-                // }
                 SchemeService.prototype.handleError = function (error) {
                     console.error('ERROR LOGGER ' + error);
                     return Observable_1.Observable.throw(error.json().error || 'Server error');
                 };
                 SchemeService.prototype.getScheme = function (id) {
-                    return;
-                    //   console.log(id);
-                    //     return this.getSchemes()
-                    //         .map((schemess: ISchemeDetailsObject[]) => schemess.find(s => s.scheme.caseKey === id));
+                    return this._http.get(this._singleSchemeUrl)
+                        .toPromise()
+                        .then(function (response) { console.log(response.json().data); return response.json().data; })
+                        .catch(this.handleError);
                 };
                 SchemeService = __decorate([
                     core_1.Injectable(), 

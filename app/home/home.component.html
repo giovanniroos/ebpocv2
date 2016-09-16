@@ -30,7 +30,7 @@
                 <tbody>
                     <tr *ngFor='#scheme of schemes | schemeFilter:listFilter'>
                         <td> 
-                         <a [routerLink]="['Members',{id: scheme.caseKey}]">
+                         <a [routerLink]="['Members',{id: scheme.scheme.caseKey}]">
                           {{scheme.schemeName}}
                           </a>
                         </td>

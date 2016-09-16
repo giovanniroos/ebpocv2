@@ -6,17 +6,18 @@ import {IMemberObject} from './objects/memberObject';
 
 @Injectable()
 export class MemberService {
-    private _url = "api/members/memberList.json";
+    // private _url = "api/members/memberList.json";
+    private _url = "http://localhost:3000/api/document/v1/schemes/23332/members";
 
     constructor(private _http: Http) {
 
     }
 
-    getMembers(): Observable<IMemberObject[]> {
+    getMembers (id: number): Promise<IMemberObject[]> {
         return this._http.get(this._url)
-            .map((response: Response) => <IMemberObject[]>response.json())
-            // .do(data => console.log('All: ' + JSON.stringify(data)))
-            .catch(this.handleError);
+                  .toPromise()
+                  .then(response => {return response.json().data})
+                  .catch(this.handleError);
     }
 
     private handleError(error: Response) {
@@ -24,9 +25,5 @@ export class MemberService {
         return Observable.throw(error.json().error || 'Server error');
     }
 
-    getMember(id: string): Observable<IMemberObject> {
-      console.log(id);
-        return this.getMembers()
-            .map((members: IMemberObject[]) => members.find(s => s.memberDetails.schemeMember.member.caseMbrKey === id));
-    }
+    
 }
