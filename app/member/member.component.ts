@@ -17,48 +17,47 @@ export class MemberComponent implements OnInit {
     frontendScheme: ISchemeDetailsObject;
     errorMessage: string;
     members: IMemberObject[];
+    data: any;
 
     constructor(private _router: Router,
         private _routeParams: RouteParams,
         private _schemeService: SchemeService,
         private _memberService: MemberService) {
+            this.data = this.getData();
     }
 
     ngOnInit() {
         let id = +this._routeParams.get('id');
         console.log("Selected scheme case key " + id);
         // this.getScheme(id);
-        // this._schemeService.getScheme(id)
-        //         .then(schemeDetails => {
-        //             this.frontendScheme = this.createSchemeDetails(schemeDetails);
-        //             console.log("CORRECT? 1--> " + this.frontendScheme.scheme.schemeNo);
-        //         });
-        // console.log("CORRECT? 2--> ");
-
-        this._memberService.getMembers(id)
-            .then(memberDetails => {
-                this.members = this.createMemberDetailsArr(memberDetails);
-            });
-    }
-
-    onBack(): void {
-        this._router.navigate(['Home']);
+        let promise :Promise<ISchemeDetailsObject> = this._schemeService.getScheme(id);
+        console.log(promise);
+        this.frontendScheme = this.createSchemeDetails(promise);
+        console.log('_________________ frontendScheme is : ' + this.frontendScheme);
+        this.getMembers(id);
     }
 
     getScheme(id){
          this._schemeService.getScheme(id)
                 .then(schemeDetails => {
                     this.frontendScheme = this.createSchemeDetails(schemeDetails);
-                    console.log("CORRECT? 1--> " + this.frontendScheme.scheme.schemeNo);
+                    // console.log("CORRECT? 1--> " + this.frontendScheme.scheme.schemeNo);
                 });
     }
 
-    //this 'transforms' the data
+    getMembers(id){
+    this._memberService.getMembers(id)
+            .then(memberDetails => {
+                this.members = this.createMemberDetailsArr(memberDetails);
+            });
+    }
+
+    //this 'transforms' the scheme data
     private createSchemeDetails(objArr : any) : ISchemeDetailsObject{
             return objArr.schemeDetails;
         }
 
-    //this 'transforms' the data
+    //this 'transforms' the member data
     private createMemberDetailsArr(objArr : any) : IMemberObject[]{
             let arr : IMemberObject[] = [];
             for(let obj of objArr){
@@ -66,4 +65,16 @@ export class MemberComponent implements OnInit {
             }
             return arr;
         }
+
+    private getData(){
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve('Received data');
+                }, 5000);
+            })
+        }
+
+    onBack(): void {
+        this._router.navigate(['Home']);
+    }
 }

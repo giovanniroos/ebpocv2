@@ -37,39 +37,38 @@ System.register(['angular2/core', 'angular2/router', '../scheme/scheme.service',
                     this._schemeService = _schemeService;
                     this._memberService = _memberService;
                     this.pageTitle = 'Member list for ';
+                    this.data = this.getData();
                 }
                 MemberComponent.prototype.ngOnInit = function () {
-                    var _this = this;
                     var id = +this._routeParams.get('id');
                     console.log("Selected scheme case key " + id);
                     // this.getScheme(id);
-                    // this._schemeService.getScheme(id)
-                    //         .then(schemeDetails => {
-                    //             this.frontendScheme = this.createSchemeDetails(schemeDetails);
-                    //             console.log("CORRECT? 1--> " + this.frontendScheme.scheme.schemeNo);
-                    //         });
-                    // console.log("CORRECT? 2--> ");
-                    this._memberService.getMembers(id)
-                        .then(function (memberDetails) {
-                        _this.members = _this.createMemberDetailsArr(memberDetails);
-                    });
-                };
-                MemberComponent.prototype.onBack = function () {
-                    this._router.navigate(['Home']);
+                    var promise = this._schemeService.getScheme(id);
+                    console.log(promise);
+                    this.frontendScheme = this.createSchemeDetails(promise);
+                    console.log('_________________ frontendScheme is : ' + this.frontendScheme);
+                    this.getMembers(id);
                 };
                 MemberComponent.prototype.getScheme = function (id) {
                     var _this = this;
                     this._schemeService.getScheme(id)
                         .then(function (schemeDetails) {
                         _this.frontendScheme = _this.createSchemeDetails(schemeDetails);
-                        console.log("CORRECT? 1--> " + _this.frontendScheme.scheme.schemeNo);
+                        // console.log("CORRECT? 1--> " + this.frontendScheme.scheme.schemeNo);
                     });
                 };
-                //this 'transforms' the data
+                MemberComponent.prototype.getMembers = function (id) {
+                    var _this = this;
+                    this._memberService.getMembers(id)
+                        .then(function (memberDetails) {
+                        _this.members = _this.createMemberDetailsArr(memberDetails);
+                    });
+                };
+                //this 'transforms' the scheme data
                 MemberComponent.prototype.createSchemeDetails = function (objArr) {
                     return objArr.schemeDetails;
                 };
-                //this 'transforms' the data
+                //this 'transforms' the member data
                 MemberComponent.prototype.createMemberDetailsArr = function (objArr) {
                     var arr = [];
                     for (var _i = 0, objArr_1 = objArr; _i < objArr_1.length; _i++) {
@@ -77,6 +76,16 @@ System.register(['angular2/core', 'angular2/router', '../scheme/scheme.service',
                         arr.push(obj.memberDetails);
                     }
                     return arr;
+                };
+                MemberComponent.prototype.getData = function () {
+                    return new Promise(function (resolve) {
+                        setTimeout(function () {
+                            resolve('Received data');
+                        }, 5000);
+                    });
+                };
+                MemberComponent.prototype.onBack = function () {
+                    this._router.navigate(['Home']);
                 };
                 MemberComponent = __decorate([
                     core_1.Component({
