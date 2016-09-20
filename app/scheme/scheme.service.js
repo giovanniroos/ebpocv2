@@ -25,7 +25,6 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
             }],
         execute: function() {
             SchemeService = (function () {
-                //private _url = "api/schemes/schemeList.json";
                 function SchemeService(_http) {
                     this._http = _http;
                     this._url = "http://localhost:3000/api/document/v1/schemes";
@@ -33,19 +32,17 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
                 }
                 SchemeService.prototype.getSchemes = function () {
                     return this._http.get(this._url)
-                        .toPromise()
-                        .then(function (response) { return response.json().data; })
+                        .map(function (res) { return res.json(); })
+                        .catch(this.handleError);
+                };
+                SchemeService.prototype.getScheme = function (id) {
+                    return this._http.get(this._singleSchemeUrl)
+                        .map(function (res) { return res.json(); })
                         .catch(this.handleError);
                 };
                 SchemeService.prototype.handleError = function (error) {
                     console.error('ERROR LOGGER ' + error);
                     return Observable_1.Observable.throw(error.json().error || 'Server error');
-                };
-                SchemeService.prototype.getScheme = function (id) {
-                    return this._http.get(this._singleSchemeUrl)
-                        .toPromise()
-                        .then(function (response) { console.log(response.json().data); return response.json().data; })
-                        .catch(this.handleError);
                 };
                 SchemeService = __decorate([
                     core_1.Injectable(), 

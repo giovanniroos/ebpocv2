@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', '../scheme/scheme.service',
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, scheme_service_1, member_service_1, member_filter_pipe_1;
+    var core_1, router_1, router_2, scheme_service_1, member_service_1, member_filter_pipe_1;
     var MemberComponent;
     return {
         setters:[
@@ -19,6 +19,7 @@ System.register(['angular2/core', 'angular2/router', '../scheme/scheme.service',
             },
             function (router_1_1) {
                 router_1 = router_1_1;
+                router_2 = router_1_1;
             },
             function (scheme_service_1_1) {
                 scheme_service_1 = scheme_service_1_1;
@@ -37,31 +38,24 @@ System.register(['angular2/core', 'angular2/router', '../scheme/scheme.service',
                     this._schemeService = _schemeService;
                     this._memberService = _memberService;
                     this.pageTitle = 'Member list for ';
-                    this.data = this.getData();
                 }
                 MemberComponent.prototype.ngOnInit = function () {
                     var id = +this._routeParams.get('id');
                     console.log("Selected scheme case key " + id);
-                    // this.getScheme(id);
-                    var promise = this._schemeService.getScheme(id);
-                    console.log(promise);
-                    this.frontendScheme = this.createSchemeDetails(promise);
-                    console.log('_________________ frontendScheme is : ' + this.frontendScheme);
+                    this.getScheme(id);
                     this.getMembers(id);
+                    this.data = this.getData();
                 };
                 MemberComponent.prototype.getScheme = function (id) {
                     var _this = this;
-                    this._schemeService.getScheme(id)
-                        .then(function (schemeDetails) {
-                        _this.frontendScheme = _this.createSchemeDetails(schemeDetails);
-                        // console.log("CORRECT? 1--> " + this.frontendScheme.scheme.schemeNo);
+                    this._schemeService.getScheme(id).subscribe(function (posts) {
+                        _this.frontendScheme = _this.createSchemeDetails(posts);
                     });
                 };
                 MemberComponent.prototype.getMembers = function (id) {
                     var _this = this;
-                    this._memberService.getMembers(id)
-                        .then(function (memberDetails) {
-                        _this.members = _this.createMemberDetailsArr(memberDetails);
+                    this._memberService.getMembers(id).subscribe(function (posts) {
+                        _this.members = _this.createMemberDetailsArr(posts);
                     });
                 };
                 //this 'transforms' the scheme data
@@ -71,8 +65,8 @@ System.register(['angular2/core', 'angular2/router', '../scheme/scheme.service',
                 //this 'transforms' the member data
                 MemberComponent.prototype.createMemberDetailsArr = function (objArr) {
                     var arr = [];
-                    for (var _i = 0, objArr_1 = objArr; _i < objArr_1.length; _i++) {
-                        var obj = objArr_1[_i];
+                    for (var _i = 0, _a = objArr.data; _i < _a.length; _i++) {
+                        var obj = _a[_i];
                         arr.push(obj.memberDetails);
                     }
                     return arr;
@@ -90,7 +84,8 @@ System.register(['angular2/core', 'angular2/router', '../scheme/scheme.service',
                 MemberComponent = __decorate([
                     core_1.Component({
                         templateUrl: 'app/member/member.component.html',
-                        pipes: [member_filter_pipe_1.MemberFilterPipe]
+                        pipes: [member_filter_pipe_1.MemberFilterPipe],
+                        directives: [router_2.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [router_1.Router, router_1.RouteParams, scheme_service_1.SchemeService, member_service_1.MemberService])
                 ], MemberComponent);

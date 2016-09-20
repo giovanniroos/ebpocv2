@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', 'angular2/http', 'rxjs/Rx', './home/home.component', './scheme/scheme.service', './member/member.component', './member/member.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', 'angular2/http', 'rxjs/Rx', 'rxjs/add/operator/map', './home/home.component', './scheme/scheme.service', './member/member.component', './member/member.service', './covers/covers.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', 'rxjs/Rx',
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, router_2, http_1, home_component_1, scheme_service_1, member_component_1, member_service_1;
+    var core_1, router_1, router_2, http_1, home_component_1, scheme_service_1, member_component_1, member_service_1, covers_component_1;
     var AppComponent;
     return {
         setters:[
@@ -25,6 +25,7 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', 'rxjs/Rx',
                 http_1 = http_1_1;
             },
             function (_1) {},
+            function (_2) {},
             function (home_component_1_1) {
                 home_component_1 = home_component_1_1;
             },
@@ -36,6 +37,9 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', 'rxjs/Rx',
             },
             function (member_service_1_1) {
                 member_service_1 = member_service_1_1;
+            },
+            function (covers_component_1_1) {
+                covers_component_1 = covers_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -51,7 +55,8 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', 'rxjs/Rx',
                     }),
                     router_2.RouteConfig([
                         { path: '/home', name: 'Home', component: home_component_1.HomeComponent, useAsDefault: true },
-                        { path: '/members/:id', name: 'Members', component: member_component_1.MemberComponent }
+                        { path: '/members/:id', name: 'Members', component: member_component_1.MemberComponent },
+                        { path: '/covers/:id', name: 'Covers', component: covers_component_1.CoversComponent }
                     ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

@@ -36,16 +36,15 @@ System.register(['angular2/core', 'angular2/router', '../scheme/scheme.service',
                 //this invokes the service and then calls the method that transforms the data to map to the object
                 HomeComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    this._schemeService.getSchemes()
-                        .then(function (schemeDetails) {
-                        _this.schemes = _this.createSchemeDetailsArr(schemeDetails);
+                    this._schemeService.getSchemes().subscribe(function (posts) {
+                        _this.schemes = _this.createSchemeDetailsArr(posts);
                     });
                 };
                 //this 'transforms' the data
                 HomeComponent.prototype.createSchemeDetailsArr = function (objArr) {
                     var schemeDetailsArr = [];
-                    for (var _i = 0, objArr_1 = objArr; _i < objArr_1.length; _i++) {
-                        var obj = objArr_1[_i];
+                    for (var _i = 0, _a = objArr.data; _i < _a.length; _i++) {
+                        var obj = _a[_i];
                         schemeDetailsArr.push(obj.schemeDetails);
                     }
                     return schemeDetailsArr;

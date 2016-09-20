@@ -27,13 +27,17 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
             MemberService = (function () {
                 function MemberService(_http) {
                     this._http = _http;
-                    // private _url = "api/members/memberList.json";
                     this._url = "http://localhost:3000/api/document/v1/schemes/23332/members";
+                    this._singleMemberUrl = "http://localhost:3000/api/document/v1/schemes/23332/members/186403";
                 }
                 MemberService.prototype.getMembers = function (id) {
                     return this._http.get(this._url)
-                        .toPromise()
-                        .then(function (response) { return response.json().data; })
+                        .map(function (res) { return res.json(); })
+                        .catch(this.handleError);
+                };
+                MemberService.prototype.getMember = function (id) {
+                    return this._http.get(this._singleMemberUrl)
+                        .map(function (res) { return res.json(); })
                         .catch(this.handleError);
                 };
                 MemberService.prototype.handleError = function (error) {

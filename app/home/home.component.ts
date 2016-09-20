@@ -21,16 +21,15 @@ export class HomeComponent implements OnInit {
 
     //this invokes the service and then calls the method that transforms the data to map to the object
     ngOnInit() : void{
-            this._schemeService.getSchemes()
-                .then(schemeDetails => {  
-                    this.schemes = this.createSchemeDetailsArr(schemeDetails)
-                });
+        this._schemeService.getSchemes().subscribe(posts => {
+            this.schemes = this.createSchemeDetailsArr(posts);
+        });
     }
 
     //this 'transforms' the data
     private createSchemeDetailsArr(objArr : any) : ISchemeDetailsObject[]{
             let schemeDetailsArr : ISchemeDetailsObject[] = [];
-            for(let obj of objArr){
+            for(let obj of objArr.data){
                 schemeDetailsArr.push(obj.schemeDetails);
             }
             return schemeDetailsArr;
